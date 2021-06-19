@@ -1,0 +1,293 @@
+---
+title: "Counter-Speech"
+author: "Hadi Mansourifar"
+date: "6/14/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+```
+
+## R Markdown
+
+
+```{r}
+library(ggplot2)
+data= read.csv("total-scores2.csv")
+d=data$TOXICITY
+
+###### number5########
+a=d[2348:2398]
+b=d[2400:2450]
+
+
+
+p1=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 5")
+t.test(a, b)
+
+shapiro.test(a)
+shapiro.test(b)
+
+library("ggpubr")
+ggqqplot(a, ylab = "Toxicity Score-Before",title="Instance 5",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Toxicity Score-After",title="Instance 5",
+         ggtheme = theme_minimal())
+         
+######number6
+a=d[2490:2540]
+b=d[2542:2592]
+
+p2=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 6")
+t.test(a, b)
+
+
+shapiro.test(a)
+shapiro.test(b)
+
+
+ggqqplot(a, ylab = "Toxicity Score-Before",title="Instance 6",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Toxicity Score-After",title="Instance 6",
+         ggtheme = theme_minimal())
+
+########number2#####
+a=d[3116:3166]
+b=d[3168:3218]
+
+p3=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 2")
+t.test(a, b)
+
+shapiro.test(a)
+shapiro.test(b)
+
+ggqqplot(a, ylab = "Toxicity Score-Before",title="Instance 2",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Toxicity Score-After",title="Instance 2",
+         ggtheme = theme_minimal())
+         
+         
+#---------------------Is friends
+#a=d[505:554]
+#b=d[556:605]
+
+
+         
+         
+######number4############
+a=d[5182:5232]
+b=d[5234:5284]
+
+p4=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 4")
+t.test(a, b)
+
+shapiro.test(a)
+shapiro.test(b)
+
+ggqqplot(a, ylab = "Toxicity Score-Before",title="Instance 4",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Toxicity Score-After",title="Instance 4",
+         ggtheme = theme_minimal())
+         
+         
+######number3############
+a=d[11056:11106]
+b=d[11107:11157]
+
+p5=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 3")
+t.test(a, b)
+
+shapiro.test(a)
+shapiro.test(b)
+
+ggqqplot(a, ylab = "Toxicity Score-Before",title="Instance 3",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Toxicity Score-After",title="Instance 3",
+         ggtheme = theme_minimal())
+#----------------------------peaceful world
+
+########number1#####
+a=d[76:126]
+b=d[128:178]
+
+p6=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 1")
+
+
+
+
+t.test(a, b)
+
+shapiro.test(a)
+shapiro.test(b)
+
+ggqqplot(a, ylab = "Toxicity Score-Before", title="Instance 1",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Toxicity Score-After",title="Instance 1",
+         ggtheme = theme_minimal())
+
+mean(a)
+mean(b)
+
+######################################insult score
+d=data$INSULT
+
+###### number5########
+a=d[2348:2398]
+b=d[2400:2450]
+
+
+
+p1=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 5")
+t.test(a, b)
+shapiro.test(a)
+shapiro.test(b)
+ggqqplot(a, ylab = "Insult Score-Before",title="Instance 5",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Insult Score-After",title="Instance 5",
+         ggtheme = theme_minimal())
+         
+         
+######number6
+a=d[2490:2540]
+b=d[2542:2592]
+
+p2=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 6")
+t.test(a, b)
+shapiro.test(a)
+shapiro.test(b)
+ggqqplot(a, ylab = "Insult Score-Before",title="Instance 6",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Insult Score-After",title="Instance 6",
+         ggtheme = theme_minimal())
+         
+         
+########number2#####
+a=d[3116:3166]
+b=d[3168:3218]
+
+p3=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 2")
+t.test(a, b)
+
+shapiro.test(a)
+shapiro.test(b)
+ggqqplot(a, ylab = "Insult Score-Before",title="Instance 2",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Insult Score-After",title="Instance 2",
+         ggtheme = theme_minimal())
+         
+         
+#---------------------Is friends
+#a=d[505:554]
+#b=d[556:605]
+
+
+######number4############
+a=d[5182:5232]
+b=d[5234:5284]
+
+p4=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 4")
+t.test(a, b)
+
+shapiro.test(a)
+shapiro.test(b)
+ggqqplot(a, ylab = "Insult Score-Before",title="Instance 4",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Insult Score-After",title="Instance 4",
+         ggtheme = theme_minimal())
+         
+         
+######number3############
+a=d[11056:11106]
+b=d[11107:11157]
+
+p5=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 3")
+t.test(a, b)
+
+shapiro.test(a)
+shapiro.test(b)
+ggqqplot(a, ylab = "Insult Score-Before",title="Instance 3",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Insult Score-After",title="Instance 3",
+         ggtheme = theme_minimal())
+#----------------------------peaceful world
+
+########number1#####
+a=d[76:126]
+b=d[128:178]
+
+p6=boxplot(a, b, ylab="Toxicity Score",
+names=c("Before","After"),
+main="Instance 1")
+
+
+
+
+t.test(a, b)
+
+
+shapiro.test(a)
+shapiro.test(b)
+
+ggqqplot(a, ylab = "Insult Score-Before",title="Instance 1",
+         ggtheme = theme_minimal())
+         
+
+ggqqplot(b, ylab = "Insult Score-After",title="Instance 1",
+         ggtheme = theme_minimal())
+
+
+mean(a)
+mean(b)
+
+
+
+
+
+```
+
